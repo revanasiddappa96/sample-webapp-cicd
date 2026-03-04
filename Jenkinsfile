@@ -1,16 +1,5 @@
 pipeline {
     agent any
-
-    tools {
-        maven 'Maven'
-        jdk 'JDK17'
-    }
-
-    environment {
-        IMAGE_NAME = "sample-webapp"
-        CONTAINER_NAME = "sample-webapp-container"
-    }
-
     stages {
 
         stage('Clone') {
@@ -40,7 +29,7 @@ pipeline {
 
         stage('Run Container') {
             steps {
-                bat 'docker run -d -p 8085:8080 --name %CONTAINER_NAME% %IMAGE_NAME%'
+                bat 'docker run -d -p 8086:8086 --name %CONTAINER_NAME% %IMAGE_NAME%'
             }
         }
 
