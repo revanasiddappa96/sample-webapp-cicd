@@ -33,7 +33,7 @@ pipeline {
 
         stage('Run Container') {
             steps {
-                bat 'docker run -d -p 8086:8086 --name %CONTAINER_NAME% %IMAGE_NAME%'
+                bat 'docker run -d -p 8087:80 --name %CONTAINER_NAME% %IMAGE_NAME%'
             }
         }
 
