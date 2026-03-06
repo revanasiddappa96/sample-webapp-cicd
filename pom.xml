@@ -39,11 +39,6 @@
     <artifactId>maven-war-plugin</artifactId>
     <version>3.3.2</version>
 </plugin>
-<configuration>
-<source>17</source>
-<target>17</target>
-</configuration>
-
 </plugins>
 
 </build>
