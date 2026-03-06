@@ -1,7 +1,11 @@
 pipeline {
     agent any
+    tools {
+        maven 'Maven'
+        jdk 'JDK17'
+    }
     stages {
-
+        
         stage('Clone') {
             steps {
                 echo 'Cloning repository'
