@@ -15,6 +15,6 @@ public class HelloServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         out.println("<h2>Deployment Successful!</h2>");
-        out.println("<h3>GitHub → Jenkins → Docker → Tomcat</h3>");
+        out.println("<h3>GitHub: &rarr; Jenkins: &rarr; Docker: &rarr; Tomcat</h3>");
     }
 }
