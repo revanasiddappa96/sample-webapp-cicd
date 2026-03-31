@@ -5,7 +5,7 @@ pipeline {
         jdk 'myjdk'
     }
     environment {
-        IMAGE_NAME = "sample-webapp1"
+        IMAGE_NAME = "sample-webapp"
         CONTAINER_NAME = "sample-webapp-container"
     }
     stages {
@@ -24,7 +24,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t sample-webapp1 .'
+                bat 'docker build -t sample-webapp .'
             }
         }
 
@@ -37,7 +37,7 @@ pipeline {
 
         stage('Run Container') {
             steps {
-                bat 'docker run -d -p 8085:8085 --name sample-webapp-container sample-webapp1'
+                bat 'docker run -d -p 8090:8090 --name sample-webapp-container sample-webapp'
             }
         }
 
