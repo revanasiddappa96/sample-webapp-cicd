@@ -24,20 +24,20 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t %IMAGE_NAME% .'
+                bat 'docker build -t %sample-webapp% .'
             }
         }
 
         stage('Stop Old Container') {
             steps {
-                bat 'docker stop %CONTAINER_NAME% || exit 0'
-                bat 'docker rm %CONTAINER_NAME% || exit 0'
+                bat 'docker stop %sample-webapp-container% || exit 0'
+                bat 'docker rm %sample-webapp-container% || exit 0'
             }
         }
 
         stage('Run Container') {
             steps {
-                bat 'docker run -d -p 8087:8087 --name %CONTAINER_NAME% %IMAGE_NAME%'
+                bat 'docker run -d -p 8087:8087 --name %sample-webapp-container% %sample-webapp%'
             }
         }
 
